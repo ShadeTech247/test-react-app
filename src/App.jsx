@@ -1,15 +1,15 @@
 function Header() {
   return (
-    <header>
-      <h1>Abdulsamad's Portfolio</h1>
+    <header className="mb-8">
+      <h1 className="text-4xl font-bold text-center">Abdulsamad's Portfolio</h1>
     </header>
   );
 }
 
 function About() {
   return (
-    <section>
-      <p>
+    <section className="mb-8">
+      <p className="text-base leading-relaxed">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id
         mattis massa. Duis lobortis tristique libero in gravida. Aenean porta
         pharetra massa, id scelerisque quam ultrices eget. Vivamus lorem orci,
@@ -35,52 +35,55 @@ function About() {
 }
 
 function Skills({ skills }) {
-    return (
-        <ul>{skills.map(skill => <li key={skill}>{skill}</li>)}</ul>
-    )
+  return (
+    <div>
+      <h2>My skills</h2>
+      <ul className="list-disc list-inside mb-8">
+        {skills.map((skill) => (
+          <li key={skill}>{skill}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-function Project({ name }) {
-    return (
-        <div>
-            <p>{name}</p>
-            <p>Project Description: eget auctor libero. Mauris ac sem hendrerit, interdum urna quis,
-        placerat nulla. Phasellus consequat tempus purus, a consectetur ex
-        dictum vel. Nam lorem urna, accumsan id lacus at, imperdiet luctus
-        magna. Curabitur at sodales massa. Vivamus tristique ex urna, dapibus
-        sodales erat iaculis id</p>
-        </div>
-    )
+function Project({ name, description }) {
+  return (
+    <div className="border border-solid border-gray-300 mb-8 p-3">
+      <p>{name}</p>
+      <p>{description}
+      </p>
+    </div>
+  );
 }
 
 function Contact() {
-    return (
-        <div>
-        <h2>Contact Us</h2>
-        <div className="flex gap-4 bg-red-400">
+  return (
+    <div>
+      <h2 className="text-3xl mb-3 text-center">Contact Us</h2>
+      <div className="flex gap-4">
         <a href="#">Linkedin</a>
         <a href="#">Facebook</a>
         <a href="#">Twitter</a>
-        <a href="#">Instagram</a></div>
-        </div>
-    )
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  );
 }
 function Footer() {
-    return(
-        <footer>&copy 2025</footer>
-    )
+  return <footer>&copy 2025</footer>;
 }
 function App() {
-  let softwareSkills = ["HTML", "CSS", "Javascript", "Git"]
+  let softwareSkills = ["HTML", "CSS", "Javascript", "Git"];
 
   return (
     <div className="app">
       <Header />
       <About />
       <Skills skills={softwareSkills} />
-      <Project name="React App" />
-      <Project name="HTML App" />
-      <Project name="Javascript App" />
+      <Project name="React App" description="A portfolio website built with react" />
+      <Project name="HTML App" description="A portfolio website built with HTML"/>
+      <Project name="Javascript App" description="A portfolio website built with Javascript"/>
       <Contact />
       <Footer />
     </div>
