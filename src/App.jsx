@@ -1,3 +1,5 @@
+import Calculator from "./Components/Calculator";
+import MultiStepForm from "./Components/MultistepForm";
 function Header() {
   return (
     <header className="mb-8">
@@ -77,7 +79,7 @@ function App() {
   let softwareSkills = ["HTML", "CSS", "Javascript", "Git"];
 
   return (
-    <div className="app">
+    <div className="app text-black">
       <Header />
       <About />
       <Skills skills={softwareSkills} />
@@ -86,6 +88,8 @@ function App() {
       <Project name="Javascript App" description="A portfolio website built with Javascript"/>
       <Contact />
       <Footer />
+      <Calculator />
+      
     </div>
   );
 }
