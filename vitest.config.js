@@ -8,10 +8,6 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/setupTests.js',
     pool: 'threads',
-    poolOptions: {
-      threads: {
-        singleThread: true,
-      },
-    },
+    isolate: false,
   },
 });
