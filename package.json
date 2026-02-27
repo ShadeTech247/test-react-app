@@ -11,7 +11,9 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@exodus/bytes": "^1.14.1",
     "@tailwindcss/vite": "^4.1.18",
+    "html-encoding-sniffer": "^6.0.0",
     "math-expression-evaluator": "^2.0.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
